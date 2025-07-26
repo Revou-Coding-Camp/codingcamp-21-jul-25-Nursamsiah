@@ -154,12 +154,23 @@ todoList.addEventListener('change', (e) => {
 });
 
 todoList.addEventListener('click', (e) => {
-    if (e.target.classList.contains('delete-btn')) {
-        const index = e.target.dataset.index;
+    // Debugging untuk tombol delete (X)
+    if (e.target.classList.contains('delete-btn') || e.target.closest('.delete-btn')) { // Menambahkan .closest() untuk menangani klik pada SVG di dalam button
+        const deleteButton = e.target.closest('.delete-btn'); // Dapatkan elemen tombol yang sebenarnya
+        if (!deleteButton) return; // Jika tidak ditemukan, keluar
+
+        const index = deleteButton.dataset.index;
+        console.log('Tombol X (Delete) diklik!'); // Log ini
+        console.log('Data Index:', index); // Log indeks
+
         if (index !== undefined && todos[index]) {
+            console.log('Menghapus tugas dengan indeks:', index, 'Tugas:', todos[index].task); // Log konfirmasi
             todos.splice(index, 1);
             saveTodos();
             renderTodos();
+            console.log('Tugas berhasil dihapus dan dirender ulang.'); // Log sukses
+        } else {
+            console.log('Indeks tidak valid atau tugas tidak ditemukan:', index); // Log jika indeks bermasalah
         }
     }
 });
