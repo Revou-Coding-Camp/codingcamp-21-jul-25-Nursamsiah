@@ -178,8 +178,6 @@ deleteAllBtn.addEventListener('click', () => {
         renderTodos(); 
     }
 });
-
-
 // Initial load and render saat halaman dimuat
 loadTodos();
 renderTodos();
