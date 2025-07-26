@@ -1,0 +1,34 @@
+/* css/style.css */
+
+/* Mengatur warna ikon kalender agar terlihat di background terang */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0); 
+    color: #395886; /* Warna ikon kalender menjadi darkest-blue */
+    cursor: pointer;
+}
+
+/* Custom styling untuk checkbox */
+.complete-checkbox:checked {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Styling untuk select dropdown agar panah defaultnya terlihat */
+/* Jika panah dropdown bawaan browser tidak terlihat, bisa pakai ini */
+select {
+    -webkit-appearance: none; /* Hapus panah default di WebKit (Chrome, Safari) */
+    -moz-appearance: none;    /* Hapus panah default di Firefox */
+    appearance: none;         /* Hapus panah default */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem; /* Tambah padding agar teks tidak menutupi panah */
+}
+
+/* Optional: jika Anda masih memiliki td dari tabel lama, pastikan tidak ada efek samping */
+td {
+    vertical-align: middle;
+}
